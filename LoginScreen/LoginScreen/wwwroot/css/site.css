@@ -10,6 +10,7 @@ body{
   background-image: url("../Images/PagesBackground.jpg");
   background-size:cover;
   background-repeat: no-repeat;
+  overflow:hidden;
 }
 
 .container{
@@ -17,10 +18,9 @@ body{
   align-content: center;
   }
 
-#tituloPrincipal{
-  font-size: 40px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+h1#tituloPrincipal {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .texto-padrao{
@@ -39,9 +39,45 @@ a:hover{
   text-decoration: none;
 }
 
-@keyframes animacao-inicial{
-  from{top: -400px;opacity: 0;}
-  to{top:100px;opacity: 1;}
+@keyframes animacao-login {
+    from {
+        top: -400px;
+        opacity: 0;
+    }
+
+    to {
+        top: 100px;
+        opacity: 1;
+    }
+}
+
+@keyframes animacao-registro {
+    from {
+        top: 600px;
+        opacity: 0;
+    }
+
+    to {
+        top: 100px;
+        opacity: 1;
+    }
+}
+.card {
+    top: 100px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid black;
+}
+#card-login {
+    animation-name: animacao-login;
+    animation-duration: 3s;
+}
+#card-registro {
+    animation-name: animacao-registro;
+    animation-duration: 3s;
 }
 
 .input-group-prepend span{
@@ -56,18 +92,6 @@ a:hover{
   height: 20px;
   margin-left: 15px;
   margin-right: 5px;
-}
-
-.card{
-  top:100px;
-  width: 400px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border:1px solid black;
-  animation-name: animacao-inicial;
-  animation-duration: 3s;
 }
 
 .btn-dark{

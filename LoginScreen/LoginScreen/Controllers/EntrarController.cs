@@ -5,17 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LoginScreen.Models;
+using LoginScreen.Models.ViewModels;
 
 namespace LoginScreen.Controllers
 {
-    public class HomeController : Controller
+    public class EntrarController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Logar()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Registrar()
         {
             return View();
         }

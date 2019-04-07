@@ -1,6 +1,6 @@
 using System;
 
-namespace LoginScreen.Models
+namespace LoginScreen.Models.ViewModels
 {
     public class ErrorViewModel
     {

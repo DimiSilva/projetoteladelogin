@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using LoginScreen.Models;
 
 namespace LoginScreen
 {
@@ -33,6 +35,9 @@ namespace LoginScreen
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<LoginScreenContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("LoginScreenContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +62,7 @@ namespace LoginScreen
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Entrar}/{action=Logar}/{id?}");
             });
         }
     }

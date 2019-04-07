@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+<div class="container paginaDeEntrada">
+    <div class="d-flex justify-content-center">
+        <div class="card" id="card-registro">
+            <div class="card-header" style="text-align:center;">
+                <!--titulo do card-->
+                <h1 id="tituloPrincipal">Registro</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <!--usuario-->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nome de usuário" />
+                    </div>
+                    <!--nome-->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nome" />
+                    </div>
+                    <!--email-->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope-square"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email" />
+                    </div>
+                    <!--senha-->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Senha">
+                    </div>
+                    <!--confirmação da senha-->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Confirme a senha">
+                    </div>
+                    <!--botão de registro-->
+                    <div class="form-group d-flex justify-content-center" style="margin-top: 10px;">
+                        <input type="submit" value="Registrar" class="btn btn-dark float-right">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
