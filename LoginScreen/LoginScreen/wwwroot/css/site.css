@@ -1,56 +1,97 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+*{
+  margin: 0px;
+  padding: 0px;
+}
+/*corpo*/
+body{
+  background-image: url("../Images/PagesBackground.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+.container{
+  height: 100%;
+  align-content: center;
   }
+
+#tituloPrincipal{
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.texto-padrao{
+  color: rgba(255, 255, 255,0.7);
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+a{
+
+  transition: text-shadow 1s;
+  -webkit-transition: text-shadow 1s;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+a:hover{
+  text-shadow: 0px 0px 2px white;
+  color: white;
+  text-decoration: none;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+@keyframes animacao-inicial{
+  from{top: -400px;opacity: 0;}
+  to{top:100px;opacity: 1;}
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.input-group-prepend span{
+  width: 50px;
+  background-color: rgb(10, 10, 10);
+  color: white;
+  border:0 !important;
+  }
+
+.lembrar input{
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+
+.card{
+  top:100px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border:1px solid black;
+  animation-name: animacao-inicial;
+  animation-duration: 3s;
+}
+
+.btn-dark{
+  width: 100px;
+  background-color: rgba(10, 10, 10, 0.8);
+  color: rgba(200, 200, 200, 0.8);
+  -webkit-transition: color 1s background-color 1s;
+  transition: color 1s, background-color 1s;
+}
+.btn-dark:hover{
+  color: rgba(150, 150, 150, 0.8);
+  background-color: rgba(50, 50, 50, 0.8);
+  width: 100px;
+}
+
+/*rodape*/
+#footer{
+  position: fixed;
+  bottom:0px;
+  left: 0px;
+  width:100%;
+  text-align: center;
+
+}
+footer div.container{
+  color:rgba(255, 255, 255, 0.4);
 }
