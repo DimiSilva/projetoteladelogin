@@ -1,43 +1,64 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 /*corpo*/
-body{
-  background-image: url("../Images/PagesBackground.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  overflow:hidden;
+body {
+    background-image: url("../Images/PagesBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.container{
-  height: 100%;
-  align-content: center;
-  }
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+    .container#logado {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid rgba(0, 0, 0, 0.8);
+    }
+
+h1#tituloLogado {
+    color: rgba(255,255,255,0.8);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: inline;
+}
+
+h1.tituloPagina {
+    color: rgba(255,255,255,0.8);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
 
 h1#tituloPrincipal {
     color: rgba(255, 255, 255, 0.7);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.texto-padrao{
-  color: rgba(255, 255, 255,0.7);
+
+.texto-padrao {
+    color: rgba(255, 255, 255,0.7);
 }
 
-a{
-
-  transition: text-shadow 1s;
-  -webkit-transition: text-shadow 1s;
+a {
+    transition: text-shadow 1s;
+    -webkit-transition: text-shadow 1s;
 }
 
-a:hover{
-  text-shadow: 0px 0px 2px white;
-  color: white;
-  text-decoration: none;
-}
+    a:hover {
+        text-shadow: 0px 0px 2px white;
+        color: white;
+        text-decoration: none;
+    }
 
 @keyframes animacao-login {
     from {
@@ -51,19 +72,19 @@ a:hover{
     }
 }
 
-@keyframes animacao-registro {
+@keyframes animacao-cadastro {
     from {
         top: 600px;
         opacity: 0;
     }
 
     to {
-        top: 100px;
+        top: 20px;
         opacity: 1;
     }
 }
-.card {
-    top: 100px;
+
+div.card {
     width: 400px;
     background-color: rgba(0, 0, 0, 0.6);
     padding-top: 10px;
@@ -71,51 +92,69 @@ a:hover{
     padding-right: 20px;
     border: 1px solid black;
 }
-#card-login {
+
+div#card-login {
+    top: 100px;
     animation-name: animacao-login;
     animation-duration: 3s;
 }
-#card-registro {
-    animation-name: animacao-registro;
+
+div#card-cadastro {
+    top: 20px;
+    animation-name: animacao-cadastro;
     animation-duration: 3s;
 }
 
-.input-group-prepend span{
-  width: 50px;
-  background-color: rgb(10, 10, 10);
-  color: white;
-  border:0 !important;
-  }
-
-.lembrar input{
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
+.header {
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
 }
 
-.btn-dark{
-  width: 100px;
-  background-color: rgba(10, 10, 10, 0.8);
-  color: rgba(200, 200, 200, 0.8);
-  -webkit-transition: color 1s background-color 1s;
-  transition: color 1s, background-color 1s;
+.table {
+    color: white;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    opacity:0.8;
 }
-.btn-dark:hover{
-  color: rgba(150, 150, 150, 0.8);
-  background-color: rgba(50, 50, 50, 0.8);
-  width: 100px;
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    border: 0 !important;
 }
+
+.lembrar input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.btn-dark {
+    width: 100px;
+    background-color: rgba(10, 10, 10, 0.8);
+    color: rgba(200, 200, 200, 0.8);
+    -webkit-transition: color 1s background-color 1s;
+    transition: color 1s, background-color 1s;
+}
+
+    .btn-dark:hover {
+        color: rgba(150, 150, 150, 0.8);
+        background-color: rgba(50, 50, 50, 0.8);
+        width: 100px;
+    }
 
 /*rodape*/
-#footer{
-  position: fixed;
-  bottom:0px;
-  left: 0px;
-  width:100%;
-  text-align: center;
-
+#footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
 }
-footer div.container{
-  color:rgba(255, 255, 255, 0.4);
+
+footer div.container {
+    color: rgba(255, 255, 255, 0.4);
 }

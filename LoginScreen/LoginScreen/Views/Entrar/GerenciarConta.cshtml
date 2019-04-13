@@ -1,0 +1,51 @@
+﻿@model LoginScreen.Models.ViewModels.UsuarioView
+@{
+    ViewData["Title"] = "GerenciarConta";
+}
+
+<div class="container" id="logado">
+    <div class="header">
+        <h1 id="tituloLogado">LoginScreen</h1>
+        <div class="nav" style="float:right;">
+            <a class="texto-padrao" asp-action="gerenciarConta">Gerenciar Conta</a>&nbsp;|&nbsp;
+            <a class="texto-padrao" asp-action="Logar">Deslogar</a>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1 class="tituloPagina">Gerenciar conta</h1>
+        </div>
+        <div style="width:50%; margin-left:auto; margin-right:auto;">
+            <div class="text-danger">@ViewData["ErroDeCredencias"]</div>
+            <form asp-action="GerenciarConta">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                    </div>
+                    <input asp-for="nome" type="text" class="form-control" placeholder="Nome" />
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input asp-for="senha" type="password" class="form-control" placeholder="Senha">
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input asp-for="novaSenha" type="password" class="form-control" placeholder="Nova senha">
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input asp-for="confirmaNovaSenha" type="password" class="form-control" placeholder="Confirme a nova senha">
+                </div>
+                <div class="form-group d-flex justify-content-center" style="margin-top: 10px;">
+                    <input type="submit" value="Alterar Dados" class="btn btn-dark" style="width:auto;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

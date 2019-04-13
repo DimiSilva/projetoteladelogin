@@ -1,61 +1,70 @@
-﻿
+﻿@model LoginScreen.Models.Usuario
 @{
-    ViewData["Title"] = "Registrar";
+    ViewData["Title"] = "Cadastrar";
 }
-
-<div class="container paginaDeEntrada">
+<div class="container">
     <div class="d-flex justify-content-center">
-        <div class="card" id="card-registro">
+        <div class="card" id="card-cadastro">
             <div class="card-header" style="text-align:center;">
                 <!--titulo do card-->
-                <h1 id="tituloPrincipal">Registro</h1>
+                <h1 id="tituloPrincipal">Cadastro</h1>
             </div>
             <div class="card-body">
-                <form>
+                <form asp-action="Cadastrar">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="text-danger">@ViewData["ConfirmErro"]</div>
+                    <div class="text-danger">@ViewData["UsuarioErro"]</div>
+                    <div class="text-success">@TempData["sucess"]</div>
                     <!--usuario-->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Nome de usuário" />
+                        <input asp-for="nomeDeUsuario" type="text" class="form-control" placeholder="Nome de usuário" />
                     </div>
                     <!--nome-->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-id-card"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Nome" />
+                        <input asp-for="nome" type="text" class="form-control" placeholder="Nome" />
                     </div>
                     <!--email-->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-envelope-square"></i></span>
                         </div>
-                        <input type="email" class="form-control" placeholder="Email" />
+                        <input asp-for="email" type="email" class="form-control" placeholder="Email" />
                     </div>
                     <!--senha-->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Senha">
+                        <input asp-for="senha" type="password" class="form-control" placeholder="Senha">
                     </div>
                     <!--confirmação da senha-->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Confirme a senha">
+                        <input asp-for="confirmarSenha" type="password" class="form-control" placeholder="Confirme a senha">
                     </div>
                     <!--botão de registro-->
                     <div class="form-group d-flex justify-content-center" style="margin-top: 10px;">
-                        <input type="submit" value="Registrar" class="btn btn-dark float-right">
+                        <input type="submit" value="Cadastrar" class="btn btn-dark float-right">
                     </div>
                 </form>
+                <div class="card-footer">
+                    <!--link para voltar-->
+                    <div class="d-flex justify-content-center ">
+                        <a asp-action="Logar" class="texto-padrao">Voltar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
-
-
+@section Scripts{ 
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
