@@ -23,32 +23,25 @@ namespace LoginScreen.Models
         [DataType(DataType.Password)]
         public string senha { get; set; }
 
-        [StringLength(20, MinimumLength = 8, ErrorMessage = "A senha precisa ter entre {2} e {1} caracteres")]
-        [Required(ErrorMessage = "É necessário confirmar sua senha")]
-        [DataType(DataType.Password)]
-        public string confirmarSenha { get; set; }
-
         public Usuario()
         {
 
         }
 
-        public Usuario(int id, string nomeDeUsuario, string nome, string email, string senha, string confirmarSenha)
+        public Usuario(int id, string nomeDeUsuario, string nome, string email, string senha)
         {
             this.id = id;
             this.nomeDeUsuario = nomeDeUsuario;
             this.nome = nome;
             this.email = email;
             this.senha = senha;
-            this.confirmarSenha = confirmarSenha;
         }
-        public void AlterarNome(string novoNome)
+        public Usuario(string nomeDeUsuario, string nome, string email, string senha)
         {
-            nome = novoNome;
-        }
-        public void AlterarSenha(string novaSenha)
-        {
-            senha = novaSenha;
+            this.nomeDeUsuario = nomeDeUsuario;
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
         }
     }
 }

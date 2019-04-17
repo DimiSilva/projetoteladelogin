@@ -21,10 +21,6 @@ namespace LoginScreen.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("confirmarSenha")
-                        .IsRequired()
-                        .HasMaxLength(20);
-
                     b.Property<string>("email")
                         .IsRequired();
 

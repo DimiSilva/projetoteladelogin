@@ -1,21 +1,18 @@
 ﻿@model IEnumerable<LoginScreen.Models.Usuario>
 @{
-    ViewData["Title"] = "Logado";
+    ViewData["Title"] = "Principal";
 }
 <div class="container" id="logado">
     <div class="header">
-        <h1 id="tituloLogado">LoginScreen</h1>
-
-        <h3 class="texto-padrao" style="display:inline; margin-left: 50px;">Bem vindo @TempData["Logado"]</h3>
-        <div class="nav" style="float:right;">
-            <a class="texto-padrao" asp-action="gerenciarConta">Gerenciar Conta</a>&nbsp;|&nbsp;
+        <h3 class="texto-padrao" style="position:relative; display:inline;">Bem vindo @TempData["Logado"]</h3>
+        <div class="nav" style="position:relative; float:right;">
+            <a class="texto-padrao">Gerenciar Conta</a>&nbsp;|&nbsp;
             <a class="texto-padrao" asp-action="Logar">Deslogar</a>
         </div>
     </div>
     <div>
         <div>
             <h1 class="tituloPagina">Cadastrados</h1>
-
         </div>
         <div>
             <div class="text-success" style="margin-right:100px;">@TempData["sucess"]</div>

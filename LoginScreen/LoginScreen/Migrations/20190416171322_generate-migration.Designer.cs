@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoginScreen.Migrations
 {
     [DbContext(typeof(LoginScreenContext))]
-    [Migration("20190408074626_Usuario")]
-    partial class Usuario
+    [Migration("20190416171322_generate-migration")]
+    partial class generatemigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,10 +22,6 @@ namespace LoginScreen.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("confirmarSenha")
-                        .IsRequired()
-                        .HasMaxLength(20);
 
                     b.Property<string>("email")
                         .IsRequired();

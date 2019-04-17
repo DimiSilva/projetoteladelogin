@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LoginScreen.Data;
+﻿using System.Linq;
 using LoginScreen.Models;
 
 namespace LoginScreen.Data
@@ -22,7 +18,7 @@ namespace LoginScreen.Data
             {
                 return;
             }
-            Usuario admin = new Usuario(1, "Admin","Admin", "Admin@gmail.com", "adm123456", "adm123456");
+            Usuario admin = new Usuario(1, "Admin","Admin", "Admin@gmail.com", "adm123456");
             _context.Usuario.Add(admin);
             _context.SaveChanges();
         }

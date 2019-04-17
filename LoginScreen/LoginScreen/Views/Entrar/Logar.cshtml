@@ -1,4 +1,4 @@
-﻿@model LoginScreen.Models.Usuario
+﻿@model LoginScreen.Models.ViewModels.LoginViewModel
 @{
     ViewData["Title"] = "Logar";
 }
@@ -13,12 +13,14 @@
                 <form asp-action="Logar">
                     <div class="text-danger">@ViewData["ErroDeCredencias"]</div>
                     <div class="text-success">@ViewData["message"]</div>
+                    <span asp-validation-for="nomeDeUsuario" class="text-danger"></span>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
                         <input asp-for="nomeDeUsuario" type="text" class="form-control" placeholder="Nome de usuário" />
                     </div>
+                    <span asp-validation-for="senha" class="text-danger"></span>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -41,3 +43,6 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

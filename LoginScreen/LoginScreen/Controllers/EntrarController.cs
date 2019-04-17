@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using LoginScreen.Models;
 using LoginScreen.Models.ViewModels;
@@ -23,7 +22,7 @@ namespace LoginScreen.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Logar(Usuario usuario)
+        public IActionResult Logar(LoginViewModel usuario)
         {
             if (_usuarioService.Logar(usuario))
             {
@@ -40,7 +39,7 @@ namespace LoginScreen.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Cadastrar(Usuario usuario)
+        public IActionResult Cadastrar(CadastroViewModel usuario)
         {
             if (ModelState.IsValid)
             {
@@ -66,29 +65,20 @@ namespace LoginScreen.Controllers
             }
             return View(usuario);
         }
+
         public IActionResult RecuperarSenha()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult RecuperarSenha(Usuario usuario)
-        {
-            if (usuario.senha == usuario.confirmarSenha)
-            {
-                if (_usuarioService.RecuperarSenha(usuario))
-                {
-                    ViewData["message"] = "senha alterada";
-                    return RedirectToAction("Logar");
-                }
-                ViewData["erroDeUsuario"] = "O usuário digitado não existe";
-            }
-            else if (usuario.senha != usuario.confirmarSenha)
-            {
-                ViewData["erroDeSenha"] = "As senhas digitadas são diferentes";
-            }
-            return View(usuario);
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RecuperarSenha(RecuperarSenhaViewModel usuario)
+        {
+            return View();
         }
+
+
         public IActionResult Logado()
         {
             if (TempData["Logado"]!= null)
@@ -97,38 +87,6 @@ namespace LoginScreen.Controllers
                 return View(usuarios);
             }
             return BadRequest();
-        }
-
-        public IActionResult GerenciarConta()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult GerenciarConta(UsuarioView usuario)
-        {
-            if(usuario.nome == null|| usuario.senha == null || usuario.novaSenha== null|| usuario.novaSenha != usuario.confirmaNovaSenha)
-            {
-                ViewData["erroDeCredenciais"] = "informações inválidas";
-            }
-            else
-            {
-                string User = _usuarioService.AlterarRegistro(usuario);
-                if (User != null)
-                {
-                    TempData["Logado"] = User;
-                    TempData["sucess"] = "Credenciais alteradas";
-                    return RedirectToAction(nameof(Logado));
-                }
-                
-            }
-            return View(usuario);
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

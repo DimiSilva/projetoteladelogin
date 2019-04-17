@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LoginScreen.Migrations
 {
-    public partial class Usuario : Migration
+    public partial class generatemigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,8 +16,7 @@ namespace LoginScreen.Migrations
                     nomeDeUsuario = table.Column<string>(maxLength: 16, nullable: false),
                     nome = table.Column<string>(nullable: false),
                     email = table.Column<string>(nullable: false),
-                    senha = table.Column<string>(maxLength: 20, nullable: false),
-                    confirmarSenha = table.Column<string>(maxLength: 20, nullable: false)
+                    senha = table.Column<string>(maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {

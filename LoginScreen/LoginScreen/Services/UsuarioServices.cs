@@ -19,7 +19,7 @@ namespace LoginScreen.Services
             return _context.Usuario.ToList();
         }
 
-        public bool Cadastrar(Usuario obj)
+        public bool Cadastrar(CadastroViewModel obj)
         {
             foreach(Usuario user in _context.Usuario)
             {
@@ -28,11 +28,11 @@ namespace LoginScreen.Services
                     return false;
                 }
             }
-            _context.Add(obj);
+            _context.Add(new Usuario(obj.nomeDeUsuario,obj.nome,obj.email,obj.senha));
             _context.SaveChanges();
             return true;
         }
-        public bool Logar(Usuario obj)
+        public bool Logar(LoginViewModel obj)
         {
             foreach (Usuario user in _context.Usuario.ToList())
             {
@@ -42,34 +42,6 @@ namespace LoginScreen.Services
                 }
             }
             return false;
-        }
-        public bool RecuperarSenha(Usuario obj)
-        {
-            foreach(Usuario User in _context.Usuario.ToList())
-            {
-                if(User.nomeDeUsuario == obj.nomeDeUsuario)
-                {
-                    User.senha = obj.senha;
-                    User.confirmarSenha = obj.confirmarSenha;
-                    _context.SaveChanges();
-                    return true;
-                }
-            }
-            return false;
-        }
-        public string AlterarRegistro(UsuarioView obj) {
-            foreach(Usuario item in _context.Usuario.ToList())
-            {
-                if(item.nome == obj.nome && item.senha == obj.senha)
-                {
-                    item.nome = obj.nome;
-                    item.senha = obj.novaSenha;
-                    item.confirmarSenha = obj.novaSenha;
-                    _context.SaveChanges();
-                    return item.nomeDeUsuario;
-                }
-            }
-            return null;
         }
     }
 }
