@@ -6,15 +6,11 @@
     <div class="d-flex justify-content-center">
         <div class="card" id="card-cadastro">
             <div class="card-header" style="text-align:center;">
-                <!--titulo do card-->
                 <h1 id="tituloPrincipal">Cadastro</h1>
             </div>
             <div class="card-body">
                 <form asp-action="Cadastrar">
-                    <div class="text-danger">@ViewData["ConfirmErro"]</div>
-                    <div class="text-danger">@ViewData["UsuarioErro"]</div>
-                    <div class="text-success">@TempData["sucess"]</div>
-
+                    <span class="text-danger">@ViewData["UsuarioErro"]</span>
                     <span asp-validation-for="nomeDeUsuario" class="text-danger"></span>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
@@ -31,6 +27,7 @@
                         <input asp-for="nome" type="text" class="form-control" placeholder="Nome" />
                     </div>
 
+                    <span class="text-danger">@ViewData["EmailErro"]</span>
                     <span asp-validation-for="email" class="text-danger"></span>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
@@ -68,6 +65,6 @@
         </div>
     </div>
 </div>
-@section Scripts{ 
+@section Scripts{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -10,6 +10,7 @@ body {
     background-image: url("../Images/PagesBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 .container {
@@ -19,8 +20,10 @@ body {
 
     .container#logado {
         height: 100%;
+        position: absolute;
         background-color: rgba(0, 0, 0, 0.5);
-        border: 2px solid rgba(0, 0, 0, 0.8);
+        border-left: 2px solid rgba(0, 0, 0, 0.8);
+        border-right: 2px solid rgba(0, 0, 0, 0.8);
     }
 
 h1#tituloLogado {
@@ -112,7 +115,7 @@ div#card-cadastro {
 
 .table {
     color: white;
-    width:80%;
+    width:95%;
     margin-left:auto;
     margin-right:auto;
     opacity:0.8;

@@ -20,6 +20,7 @@ namespace LoginScreen.Models.ViewModels
         [DataType(DataType.Password)]
         public string senha { get; set; }
 
+        [Compare("senha",ErrorMessage = "As senhas não batem")]
         [StringLength(20, MinimumLength = 8, ErrorMessage = "A senha precisa ter entre {2} e {1} caractéres")]
         [Required(ErrorMessage = "É necessário confirmar sua senha")]
         [DataType(DataType.Password)]

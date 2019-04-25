@@ -13,13 +13,15 @@ namespace LoginScreen.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("LoginScreen.Models.Usuario", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("confirmado");
 
                     b.Property<string>("email")
                         .IsRequired();

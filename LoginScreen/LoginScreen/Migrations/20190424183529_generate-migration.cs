@@ -16,7 +16,8 @@ namespace LoginScreen.Migrations
                     nomeDeUsuario = table.Column<string>(maxLength: 16, nullable: false),
                     nome = table.Column<string>(nullable: false),
                     email = table.Column<string>(nullable: false),
-                    senha = table.Column<string>(maxLength: 20, nullable: false)
+                    senha = table.Column<string>(maxLength: 20, nullable: false),
+                    confirmado = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
