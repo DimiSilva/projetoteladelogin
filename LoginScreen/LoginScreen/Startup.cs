@@ -34,7 +34,7 @@ namespace LoginScreen
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<LoginScreenContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("LoginScreenContext"), builder => builder.MigrationsAssembly("LoginScreen")));
+                    options.UseSqlServer(Configuration.GetConnectionString("LoginScreenContext")));
 
             services.AddScoped<SeedService>();
             services.AddScoped<UsuarioServices>();
@@ -49,7 +49,7 @@ namespace LoginScreen
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Entrar/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }

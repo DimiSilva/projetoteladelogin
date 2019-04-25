@@ -12,7 +12,7 @@ namespace LoginScreen.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     nomeDeUsuario = table.Column<string>(maxLength: 16, nullable: false),
                     nome = table.Column<string>(nullable: false),
                     email = table.Column<string>(nullable: false),

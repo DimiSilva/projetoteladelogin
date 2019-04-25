@@ -18,7 +18,7 @@ namespace LoginScreen.Data
             {
                 return;
             }
-            Usuario admin = new Usuario(1, "Admin","Admin", "Admin@gmail.com", "adm123456");
+            Usuario admin = new Usuario("Admin","Admin", "Admin@gmail.com", "adm123456");
             _context.Usuario.Add(admin);
             _context.SaveChanges();
         }

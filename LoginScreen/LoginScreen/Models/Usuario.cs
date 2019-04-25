@@ -32,7 +32,7 @@ namespace LoginScreen.Models
 
         }
 
-        public Usuario(int id, string nomeDeUsuario, string nome, string email, string senha)
+        public Usuario(string nomeDeUsuario, string nome, string email, string senha)
         {
             this.id = id;
             this.nomeDeUsuario = nomeDeUsuario;
